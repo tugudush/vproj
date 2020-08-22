@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js - Declarative Rendering</title>
+</head>
+
+<body>
+
+  <h1>Introduction</h1>
+
+  <h2>Declarative Rendering</h2>
+
+  
+  <h3>Basic Rendering</h3>
+
+  <div id="app">
+    {{ message }}
+  </div><!--/#app-->
+
+  <h3>v-bind</h3>
+
+  <div id="app-2">
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds
+      to see my dynamically bound title!
+    </span>
+  </div><!--/#app2-->
+
+  <h2>Conditional &amp; Loops</h2>
+
+  <h3>v-if</h3>
+
+  <div id="app-3">
+    <span v-if="seen">Now you see me</span>
+  </div><!--/#app-3-->
+
+  <h3>v-for</h3>
+
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div><!--/#app4-->
+
+  <h2>Handling User Input</h2>
+
+  <h3>v-on</h3>
+
+  <div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+  </div>
+
+  <h3>v-model</h3>
+
+  <div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <h2>Composing with Components</h2>
+
+  <h3>Vue.component</h3>
+
+  <div id="app-7">
+    <ol>
+      <!--
+        Now we provide each todo-item with the todo object
+        it's representing, so that its content can be dynamic.
+        We also need to provide each component with a "key",
+        which will be explained later.
+      -->
+      <todo-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:key="item.id"
+      ></todo-item>
+    </ol>
+  </div><!--/#app7-->
+
+
+  <script src="/node_modules/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
