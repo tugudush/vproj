@@ -14,3 +14,14 @@ vm.$watch('a', function (newValue, oldValue) {
   console.log('oldValue: ' + oldValue);
   console.log('newValue: ' + newValue);
 })
+
+new Vue({
+  data: {
+    b: 1
+  },
+  created: function () {
+    // `this` points to the vm instance
+    console.log('b is: ' + this.b)
+  }
+})
+// => "a is: 1"
