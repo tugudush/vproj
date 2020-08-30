@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js - Class and Style Bindings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Class and Style Bindings</h1>
+
+  <h2>Binding HTML Classes</h2>
+
+  <h3>Object Syntax</h3>
+
+  <h4>Example 01 - Single Class</h4>
+  <div id="app">
+    <div v-bind:class="{ active: isActive }">Example 01</div>
+  </div><!-- /#app -->
+
+  <h4>Example 02 - Multiple Class</h4>
+  <div id="app2">
+    <div v-bind:class="{ active: isActive, 'text-danger': hasError}">Example 02</div>
+  </div><!-- /#app2 -->
+
+  <h4>Example 03</h4>
+  <div id="app3">
+    <div v-bind:class="classObject">Example 03</div>
+  </div><!-- /#app3 -->
+
+  <h3>Array Syntax</h3>
+  
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <script src="index.js"></script>
+</body>
+
+</html>

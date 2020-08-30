@@ -1,0 +1,7 @@
+.active {
+  border: 1px solid #000;
+}
+
+.text-danger {
+  color: red;
+}

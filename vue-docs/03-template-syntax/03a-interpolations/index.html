@@ -8,9 +8,16 @@
 </head>
 
 <body>
+  <div id="app">
+    <h2>#Text</h2>
+    <span>Message: {{ msg }}</span>
 
-  <h2>#Text</h2>
-  <span>Message: {{ msg }}</span>
+    <h2>Raw HTML</h2>
+
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+  </div><!--/#app-->
+
 
   <script src="/node_modules/vue/dist/vue.js"></script>
   <script src="index.js"></script>
