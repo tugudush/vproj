@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js - List Rendering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>List Rendering</h1>
+
+  <h2>Example 01</h2>
+  <ul id="example-1">
+    <li v-for="item in items" :key="item.message">
+      {{ item.message }}
+    </li>
+  </ul>
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <script src="index.js"></script>
+</body>
+
+</html>

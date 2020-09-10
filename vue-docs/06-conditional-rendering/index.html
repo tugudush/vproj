@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js - Conditional Rendering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Conditional Rendering</h1>
+
+  <h2>v-if</h2>
+
+  <div id="app">
+    <h1 v-if="awesome">Vue is awesome!</h1>
+    <h1 v-else>Oh no 😢</h1>
+  </div><!-- /#app -->
+
+  <div id="app2">
+    <template v-if="ok">
+      <h1>Title</h1>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+    </template>
+  </div><!-- /#app2 -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <script src="index.js"></script>
+</body>
+
+</html>

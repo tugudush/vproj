@@ -31,6 +31,38 @@
   </div><!-- /#app3 -->
 
   <h3>Array Syntax</h3>
+
+  <div id="app4">
+    <div v-bind:class="[activeClass, errorClass]">Example 4 - Array Syntax</div>
+  </div><!-- /#app4 -->
+
+  <div id="app5">
+    <div v-bind:class="[isActive ? activeClass : '', errorClass]">Example 5 - Array Syntax with Ternary Expression</div>
+  </div><!-- /#app5 -->
+
+  <h3>With Components</h3>
+  <div id="app6">
+    <my-component class="baz boo"></my-component>
+  </div><!-- /#app6 -->
+
+  <h2>Binding Inline Styles</h2>
+
+  <h3>Object Syntax</h3>
+
+  <div id="app7">
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">Example 7 - Inline Style - Object Syntax camelCase</div>
+    <div v-bind:style="{ color: activeColor, 'font-size': fontSize + 'px' }">Example 7 - Inline Style - Object Syntax kebab-case</div>
+  </div><!-- /#app7 -->
+
+  <div id="app7b">    
+    <div v-bind:style="styleObject">Example 7b - Inline Style - BindObject Syntax</div>
+  </div><!-- /#app7 -->
+
+  <h2>Array Syntax</h2>
+
+  <div id="app8">
+    <div v-bind:style="[baseStyles, overridingStyles]">Example 8 - Inline Style - Array Syntax</div>
+  </div><!-- /#app8 -->
   
 
   <script src="/node_modules/vue/dist/vue.js"></script>  

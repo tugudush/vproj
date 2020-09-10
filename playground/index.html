@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 - Basic Data Binding</title>
+</head>
+<body>
+
+  <div id="app">
+    <input v-model="input_message" placeholder="Enter any message.">
+    <p>{{ display_message }}</p>
+  </div><!-- /#root -->
+
+  
+  
+  <script src="/node_modules/vue/dist/vue.js"></script>
+  <!-- <script src="index.js"></script> -->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        input_message: '',
+        display_message: ''
+      },
+      watch: {
+        input_message: function(new_input_message, old_input_message) {
+        this.display_message = 'Typing...';
+        } // end of input_message()
+      } // end of watch
+    }) // end of app
+  </script>
+</body>
+</html>
