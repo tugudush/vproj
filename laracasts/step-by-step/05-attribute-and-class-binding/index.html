@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 - Attribute &amp; Class Binding</title>
+  <style>
+    .color-red {
+      color: red;
+    }
+
+    .color-blue {
+      color: blue;
+    }
+
+    .grayBG {
+      background-color: #999;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    
+    <button id="button1" :class="classes" :title="title" @click="toggleBG">Toggle Background</button>
+    <button :class="classes">Toggle Disabled Status</button>
+
+  </div><!-- /#app -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>
+  <!-- <script src="index.js"></script> -->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        title: 'new title',
+        classes: {
+          grayBG: false
+        }
+      }, // end of data
+      methods: {
+        toggleBG() {
+          var button1 = document.querySelector('#button1').classList.toggle("grayBG");
+          //this.classes.grayBG = !this.classes.grayBG;
+        }
+      }, // end of methods
+    }) // end of app
+  </script>
+</body>
+
+</html>

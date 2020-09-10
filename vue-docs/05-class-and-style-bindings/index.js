@@ -16,6 +16,16 @@ var app2 = new Vue({
 var app3 = new Vue({
   el: '#app3',
   data: {
+    classObject: {
+      active: true,
+      'text-danger': true
+    } // end of classObject
+  } // end of data
+}) // end of app3
+
+var app3b = new Vue({
+  el: '#app3b',
+  data: {
     isActive: true,
     error: null
   }, // end of data:
@@ -27,7 +37,7 @@ var app3 = new Vue({
       } // end of return
     } // end of assObject: function()
   } // end of computed:
-}) // end of app3
+}) // end of app3b
 
 var app4 = new Vue({
   el: '#app4',

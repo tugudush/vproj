@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 - Event Listeners</title>
+</head>
+
+<body>
+
+  <div id="app">
+    
+    <ul>
+      <!-- <li v-for="name in names">{{ name }}</li> -->
+      <li v-for="name in names" v-text="name"></li>
+    </ul>
+
+    <input id="input" type="text" v-model="new_name">
+    <!-- <button v-on:click="add_name"></button> -->
+    <button v-on:click="add_name">Add</button>
+
+  </div><!-- /#app -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>
+  <!-- <script src="index.js"></script> -->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        new_name: '',
+        names: [
+          'Joe',
+          'Mary',
+          'Jane',
+          'Jack'
+        ]
+      }, // end of data
+      methods: {
+        add_name() {          
+          //var new_name = document.querySelector('#input').value;
+          //alert('new_name: ' + new_name);
+          //this.names.push(new_name)
+          this.names.push(this.new_name);
+          this.new_name = ''; // clear input field
+        } // end of add_name()
+      }, // end of methods
+    }) // end of app
+  </script>
+</body>
+
+</html>

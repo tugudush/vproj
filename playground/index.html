@@ -7,29 +7,14 @@
 </head>
 <body>
 
+  <h2>Debounced v-model</h2>
   <div id="app">
     <input v-model="input_message" placeholder="Enter any message.">
     <p>{{ display_message }}</p>
-  </div><!-- /#root -->
-
-  
+  </div><!-- /#app -->  
   
   <script src="/node_modules/vue/dist/vue.js"></script>
-  <!-- <script src="index.js"></script> -->
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        input_message: '',
-        display_message: ''
-      },
-      watch: {
-        input_message: function(new_input_message, old_input_message) {
-        this.display_message = 'Typing...';
-        
-        } // end of input_message()
-      } // end of watch
-    }) // end of app
-  </script>
+  <script src="/node_modules/lodash/lodash.min.js"></script>
+  <script src="index.js"></script>  
 </body>
 </html>
