@@ -4,6 +4,7 @@
   "description": "vue.js tutorials",
   "main": "index.js",
   "dependencies": {
+    "bulma": "^0.9.0",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
     "vue": "^2.6.12"
