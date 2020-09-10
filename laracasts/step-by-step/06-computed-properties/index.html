@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 - Computed Properties</title>  
+</head>
+
+<body>
+
+  <div id="app">  
+
+    <h2>All Tasks</h2>
+    <ul>
+      <li v-for="task in tasks" v-text="task.description"></li>
+    </ul>
+
+    <h2>Completed Tasks</h2>
+    <ul>
+      <li v-for="task in tasks" v-if="task.completed" v-text="task.description"></li>
+    </ul>
+
+    <h2>Incomplete Tasks</h2>
+    <ul>
+      <li v-for="task in incompleteTasks" v-text="task.description"></li>
+    </ul>
+
+  </div><!-- /#app -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <!-- <script src="index.js"></script> -->
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        tasks: [
+          {description: 'Go to the store', completed: true},
+          {description: 'Finish screencast', completed: false},
+          {description: 'Make donation', completed: false},
+          {description: 'Clear inbox', completed: false},
+          {description: 'Make dinner', completed: false},
+          {description: 'Clean room', completed: true}
+       ] // end of tasks
+      }, // end of data
+      computed: {
+        incompleteTasks() {
+          return this.tasks.filter(task => !task.completed);
+
+          // return this.tasks.filter(function(task) {
+          //   return !task.completed;
+          // });
+          
+        } // end of incompleteTasks()
+      } // end of computed
+    }) // end of app
+  </script>
+</body>
+
+</html>

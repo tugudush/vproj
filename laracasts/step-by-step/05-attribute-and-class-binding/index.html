@@ -25,12 +25,13 @@
 
   <div id="app">
     
-    <button id="button1" :class="classes" :title="title" @click="toggleBG">Toggle Background</button>
-    <button :class="classes">Toggle Disabled Status</button>
+    <button id="button1" :class="classes" :title="title" @click="toggleBG($event)">Reset</button>
+    <button id="button2" :class="classes" :disabled="disabled" @click="toggleDisabled">Press to disable</button>
 
   </div><!-- /#app -->
 
   <script src="/node_modules/vue/dist/vue.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <!-- <script src="index.js"></script> -->
   <script>
     var app = new Vue({
@@ -39,12 +40,16 @@
         title: 'new title',
         classes: {
           grayBG: false
-        }
+        },
+        disabled: false
       }, // end of data
       methods: {
-        toggleBG() {
-          var button1 = document.querySelector('#button1').classList.toggle("grayBG");
-          //this.classes.grayBG = !this.classes.grayBG;
+        toggleBG(event) {          
+          this.classes.grayBG = !this.classes.grayBG;
+          this.disabled = false;
+        },        
+        toggleDisabled() {          
+          this.disabled = !this.disabled;
         }
       }, // end of methods
     }) // end of app
