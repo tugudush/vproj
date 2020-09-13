@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 - Practical Components Exercise 02 - Modal</title>
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+    
+    <modal v-if="showModal" @close="showModal=false">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta minima eum iusto quod, id beatae natus accusantium rem doloremque cumque? Quo, earum dignissimos! Nisi officia ipsa soluta, quo amet voluptates.
+      </p>
+    </modal>
+
+    <button id="show-modal" @click="showModal = true">Show Modal</button>
+    
+  </div><!-- /#app -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <script src="main.js"></script>
+</body>
+
+</html>
