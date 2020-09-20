@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15 - Single-use components and inline templates</title>
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="root" class="container">
+    
+    <progress-view inline-template>
+      <div id="progress">
+        <h1>Your progress is {{ progress }}</h1>
+        <button @click="progress += 10">Update Progress</button>
+      </div><!--/#progress-->      
+    </progress-view>
+
+  </div><!-- /#root.container -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <script src="main.js"></script>
+</body>
+
+</html>
