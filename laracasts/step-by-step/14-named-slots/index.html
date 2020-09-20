@@ -4,17 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>12 - Component Communication</title>
+  <title>14 - Named Slots</title>
   <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div id="root" class="container">   
+  <div id="root" class="container">
     
-    <coupon @applied="onCouponApplied"></coupon>
-    <h1 v-if="couponApplied">You used a coupon</h1>
+    <modal>
+      <template v-slot:header>header shit</template>
+      <slot>Body shit</slot>
+    </modal>
     
   </div><!-- /#root.container -->
 
