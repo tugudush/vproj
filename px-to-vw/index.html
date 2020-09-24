@@ -12,10 +12,12 @@
 <body>
 
   <div id="app">
-    <input type="number" placeholder="px" v-model="px"> / <input type="number" v-model="viewport" placeholder="viewport width"> X 100 = 
-    <span id="vw" v-clipboard:copy="vw"
-      v-clipboard:success="onCopy"
-      v-clipboard:error="onError">{{ vw }}</span>
+    <div class="wrap">
+      <input type="number" placeholder="px" v-model="px"> / <input type="number" v-model="viewport" placeholder="viewport width"> X 100 = 
+      <span id="vw" v-clipboard:copy="vw"
+        v-clipboard:success="onCopy"
+        v-clipboard:error="onError">{{ vw }}</span>
+    </div><!-- /.wrap -->    
   </div><!-- /#app -->
 
   <script src="/node_modules/vue/dist/vue.js"></script>
