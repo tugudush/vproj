@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>px to vw converter</title>
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <input type="number" placeholder="px" v-model="px">px / <input type="number" v-model="viewport" placeholder="viewport"> viewport X 100 = 
+    <span id="vw" @click="copy">{{ vw }}</span>
+  </div><!-- /#app -->
+
+  <script src="/node_modules/vue/dist/vue.js"></script>  
+  <script src="main.js"></script>
+</body>
+
+</html>
