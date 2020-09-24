@@ -2,7 +2,7 @@ var app = new Vue({
   el: '#app',
   data: {
     px: '',
-    viewport: 1440,        
+    viewport: '',        
   },
   computed: {
     vw() {      
@@ -10,19 +10,21 @@ var app = new Vue({
       var viewport = parseFloat(this.viewport) || 0;
       var vw = px/viewport*100;
       vw = vw.toFixed(4);
-      this.delayCopy();
-      return vw;
+      
+      if (isNaN(vw) || !isFinite(vw)) {
+        vw = '';
+      }
+      
+      return vw + 'vw';
     } // end of vw()
-  }, // end of computed  
-  methods: {
-    delayCopy() {
-
-    },
+  }, // end of computed 
+  methods: {   
     onCopy(e) {
       console.log('copied: ' + e.text);
     },
     onError() {
       alert('Failed to copy to clipboard');
     }
+
   }, // end of methods
 });
