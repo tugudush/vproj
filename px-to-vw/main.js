@@ -2,22 +2,27 @@ var app = new Vue({
   el: '#app',
   data: {
     px: '',
-    viewport: 1440,    
+    viewport: 1440,        
   },
   computed: {
-    vw() {
+    vw() {      
       var px = parseFloat(this.px) || 0;
       var viewport = parseFloat(this.viewport) || 0;
       var vw = px/viewport*100;
       vw = vw.toFixed(4);
-
+      this.delayCopy();
       return vw;
     } // end of vw()
-  }, // end of computed
+  }, // end of computed  
   methods: {
-    copy() {
-      var copyText = document.querySelector('#vw').innerHTML;
-      console.log('copyText: ' + copyText);
-    } // end of copyText()
+    delayCopy() {
+
+    },
+    onCopy(e) {
+      console.log('copied: ' + e.text);
+    },
+    onError() {
+      alert('Failed to copy to clipboard');
+    }
   }, // end of methods
 });
